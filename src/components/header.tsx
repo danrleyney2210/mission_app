@@ -1,17 +1,21 @@
-import Link from "next/link";
+import Link from 'next/link'
 import { Search, ShoppingCart, UserRound, PlusCircle } from 'lucide-react'
 
 export function Header() {
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-5">
-        <Link href={'/'} className="text-2xl font-extrabold text-white">
+        <Link href={'/home'} className="text-2xl font-extrabold text-white">
           missioStore
         </Link>
 
-        <form action="" className="flex w-[320px] items-center gap-3 rounded-full bg-zinc-900 px-5 py-3 ring-zinc-700">
+        <form
+          action=""
+          className="flex w-[320px] items-center gap-3 rounded-full bg-zinc-900 px-5 py-3 ring-zinc-700"
+        >
           <Search className="w-5 h-5 text-zinc-500" />
-          <input type="text"
+          <input
+            type="text"
             placeholder="buscar Produtos..."
             className="flex-1 bg-transparent text-sm outline-none placeholder:text-zinc-500"
           />
