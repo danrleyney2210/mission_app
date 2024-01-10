@@ -5,10 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 async function getFeaturedProducts(): Promise<Product[]> {
-  const response = await api('/products', {
+  const response = await api<{ products: Product[] }>('/products', {
+    method: 'GET',
     cache: 'no-store',
   })
-  const products = await response.json()
+
+  const products = response.products
 
   return products
 }

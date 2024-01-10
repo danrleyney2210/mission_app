@@ -1,9 +1,17 @@
 import { env } from '@/env'
 
-export function api(path: string, init?: RequestInit) {
-  const baseUrl = env.NEXT_PUBLIC_API_BASE_URL
-  const apiPrefix = '/api'
-  const url = new URL(apiPrefix.concat(path), baseUrl)
+export async function api<T = unknown>(
+  path?: RequestInfo | URL,
+  init?: RequestInit | undefined,
+) {
+  const baseUrl = 'http://localhost:3333'
 
-  return fetch(url, init)
-} 
+  const data = await fetch(`${baseUrl}/mission${path}`, {
+    // Se o método não for especificado, padrão para 'GET'
+    ...init,
+  })
+  const result = await data.json()
+  // const url = new URL(apiPrefix.concat(path), baseUrl)
+
+  return result
+}

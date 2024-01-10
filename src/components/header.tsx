@@ -16,7 +16,10 @@ export function Header() {
       <div className="flex items-center gap-4">
         <CartWidget />
         <div className="w-px h-4 bg-zinc-700"></div>
-        <Link href={'/'} className="flex items-center gap-2 hoever: underline">
+        <Link
+          href={'/addProduct'}
+          className="flex items-center gap-2 hoever: underline"
+        >
           <PlusCircle />
           <span className="text-sm">Cadastrar</span>
         </Link>

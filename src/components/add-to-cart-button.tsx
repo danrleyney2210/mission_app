@@ -3,7 +3,7 @@
 import { useCart } from '@/contexts/cart-context'
 
 export interface AddToCartButtonProps {
-  productId: number
+  productId: string
 }
 
 export function AddToCartButton({ productId }: AddToCartButtonProps) {
