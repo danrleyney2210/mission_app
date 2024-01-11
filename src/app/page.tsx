@@ -33,6 +33,8 @@ export default function Login() {
             <UserRound className="w-5 h-5 text-zinc-500" />
             <input
               type="text"
+              id="user"
+              name="user"
               value={user}
               onChange={(e) => setUser(e.target.value)}
               placeholder="buscar Produtos..."
@@ -44,6 +46,8 @@ export default function Login() {
             <KeyRound className="w-5 h-5 text-zinc-500" />
             <input
               type={showKey ? 'text' : 'password'}
+              id="password"
+              name="password"
               value={key}
               onChange={(e) => setKey(e.target.value)}
               placeholder="buscar Produtos..."
@@ -65,6 +69,7 @@ export default function Login() {
 
           <button
             onClick={authLogin}
+            id="button"
             className="bg-violet-500 py-2 rounded-full mt-6 px-4 font-semibold"
           >
             Entrar
