@@ -18,25 +18,20 @@ export function RegisterProduct() {
 
   const router = useRouter()
 
-  async function handleSearch(event: FormEvent<HTMLFormElement>) {
+  // async function registerProduct() {
+  //   const response = await api(
+  //     `/add?title=${nameProduct}&price=${price}&description=${description}`,
+  //     {
+  //       cache: 'no-store',
+  //     },
+  //   )
+  //   console.log(response.json())
+  // }
+
+  function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    console.log('chegou aqui')
-
-    await api('/products', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        title: nameProduct,
-        slug: 'product-slug',
-        price,
-        image: '/moletom-ai-side.png',
-        description,
-        featured: true,
-      }),
-    })
+    // registerProduct()
   }
 
   return (
