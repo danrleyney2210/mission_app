@@ -10,13 +10,12 @@ interface ProductProps {
 }
 
 async function getProduct(id: string): Promise<Product> {
-  const response = await api<Product>(`/products/${id}`, {
+  const response = await api(`/products/${id}`, {
     cache: 'no-store',
   })
+  const products = await response.json()
 
-  const product = response.product
-
-  return product
+  return products
 }
 
 export default async function ProductPage({ params }: ProductProps) {
