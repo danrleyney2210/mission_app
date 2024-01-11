@@ -1,4 +1,3 @@
-import { Skeleton } from '@/components/skeleton'
 import Image from 'next/image'
 import Load from '../../../public/load.svg'
 
